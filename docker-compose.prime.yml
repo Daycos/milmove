@@ -72,9 +72,9 @@ services:
       - HERE_MAPS_APP_ID
       - HERE_MAPS_GEOCODE_ENDPOINT
       - HERE_MAPS_ROUTING_ENDPOINT
-      - HTTP_MY_SERVER_NAME=milmovelocal
-      - HTTP_OFFICE_SERVER_NAME=officelocal
-      - HTTP_PRIME_SERVER_NAME=primelocal
+      - HTTP_MY_SERVER_NAME=milmove.daycos.com
+      - HTTP_OFFICE_SERVER_NAME=office-milmove.daycos.com
+      - HTTP_PRIME_SERVER_NAME=prime-milmove.daycos.com
       - IWS_RBS_ENABLED=1
       - IWS_RBS_HOST
       - LOCAL_STORAGE_ROOT=/tmp

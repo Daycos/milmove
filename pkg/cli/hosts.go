@@ -21,15 +21,15 @@ const (
 	// HTTPPrimeServerNameFlag is the HTTP GHC Prime Server Name Flag
 	HTTPPrimeServerNameFlag string = "http-prime-server-name"
 	// HTTPMyServerNameLocal is the HTTP My Server Name for Local
-	HTTPMyServerNameLocal string = "milmovelocal"
+	HTTPMyServerNameLocal string = "milmove.daycos.com"
 	// HTTPOfficeServerNameLocal is the HTTP Office Server Name for Local
-	HTTPOfficeServerNameLocal string = "officelocal"
+	HTTPOfficeServerNameLocal string = "office-milmove.daycos.com"
 	// HTTPAdminServerNameLocal is the HTTP Admin Server Name for Local
-	HTTPAdminServerNameLocal string = "adminlocal"
+	HTTPAdminServerNameLocal string = "admin-milmove.daycos.com"
 	// HTTPOrdersServerNameLocal is the HTTP Orders Server Name for Local
-	HTTPOrdersServerNameLocal string = "orderslocal"
+	HTTPOrdersServerNameLocal string = "orders-milmove.daycos.com"
 	// HTTPPrimeServerNameLocal is the HTTP GHC Prime Server Name for Local
-	HTTPPrimeServerNameLocal string = "primelocal"
+	HTTPPrimeServerNameLocal string = "prime-milmove.daycos.com"
 )
 
 type errInvalidHost struct {

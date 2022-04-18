@@ -124,7 +124,7 @@ func (suite *NotificationSuite) TestUserAccountModifiedHTMLTemplateRender() {
 
 	emailData := userAccountModifiedEmailData{
 		Action:            "created",
-		ActionSource:      "https://adminlocal/",
+		ActionSource:      "https://admin-milmove.daycos.com/",
 		ModifiedUserID:    "f7c602f9-1810-446d-9435-1f1e5cca89eb",
 		ResponsibleUserID: "47ba91f9-660f-4a64-bc41-36b2bf6added",
 		Timestamp:         "2021-08-23 23:06:04.897745 +0000 UTC",
@@ -140,7 +140,7 @@ func (suite *NotificationSuite) TestUserAccountModifiedHTMLTemplateRender() {
   <li>Modified user ID: f7c602f9-1810-446d-9435-1f1e5cca89eb</li>
   <li>Responsible user ID: 47ba91f9-660f-4a64-bc41-36b2bf6added</li>
   <li>Action: Account created</li>
-  <li>Action source: https://adminlocal/</li>
+  <li>Action source: https://admin-milmove.daycos.com/</li>
   <li>Timestamp: 2021-08-23 23:06:04.897745 &#43;0000 UTC</li>
 </ul>
 
@@ -166,7 +166,7 @@ func (suite *NotificationSuite) TestUserAccountModifiedTextTemplateRender() {
 
 	emailData := userAccountModifiedEmailData{
 		Action:            "created",
-		ActionSource:      "https://adminlocal/",
+		ActionSource:      "https://admin-milmove.daycos.com/",
 		ModifiedUserID:    "f7c602f9-1810-446d-9435-1f1e5cca89eb",
 		ResponsibleUserID: "47ba91f9-660f-4a64-bc41-36b2bf6added",
 		Timestamp:         "2021-08-23 23:06:04.897745 +0000 UTC",
@@ -178,7 +178,7 @@ Activity details:
 * Modified user ID: f7c602f9-1810-446d-9435-1f1e5cca89eb
 * Responsible user ID: 47ba91f9-660f-4a64-bc41-36b2bf6added
 * Action: Account created
-* Action source: https://adminlocal/
+* Action source: https://admin-milmove.daycos.com/
 * Timestamp: 2021-08-23 23:06:04.897745 +0000 UTC
 
 Please visit the AWS Console ([instructions](https://dp3.atlassian.net/wiki/spaces/MT/pages/1250066433/0029+AWS+Organization+Authentication)) or the [MilMove Admin Interface](https://admin.move.mil) to see more details about the above activity.

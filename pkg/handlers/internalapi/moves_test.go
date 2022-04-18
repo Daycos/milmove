@@ -281,7 +281,7 @@ func (suite *HandlerSuite) TestSubmitMoveForApprovalHandler() {
 		}
 		// When: a move is submitted
 		handlerConfig := suite.HandlerConfig()
-		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmovelocal"))
+		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmove.daycos.com"))
 		handler := SubmitMoveHandler{handlerConfig, moverouter.NewMoveRouter()}
 		response := handler.Handle(params)
 
@@ -332,7 +332,7 @@ func (suite *HandlerSuite) TestSubmitMoveForApprovalHandler() {
 		}
 		// And: a move is submitted
 		handlerConfig := suite.HandlerConfig()
-		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmovelocal"))
+		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmove.daycos.com"))
 		handler := SubmitMoveHandler{handlerConfig, moverouter.NewMoveRouter()}
 		response := handler.Handle(params)
 
@@ -390,7 +390,7 @@ func (suite *HandlerSuite) TestSubmitMoveForServiceCounselingHandler() {
 		}
 		// When: a move is submitted
 		handlerConfig := suite.HandlerConfig()
-		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmovelocal"))
+		handlerConfig.SetNotificationSender(notifications.NewStubNotificationSender("milmove.daycos.com"))
 		handler := SubmitMoveHandler{handlerConfig, moverouter.NewMoveRouter()}
 		response := handler.Handle(params)
 

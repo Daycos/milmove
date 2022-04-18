@@ -90,8 +90,8 @@ func (suite *serverSuite) TestParseMultipleTLSCerts() {
 	suite.NoError(err)
 
 	keyPairOffice, err := tls.X509KeyPair(
-		suite.readFile("officelocal.pem"),
-		suite.readFile("officelocal.key"))
+		suite.readFile("office-milmove.daycos.com.pem"),
+		suite.readFile("office-milmove.daycos.com.key"))
 
 	suite.NoError(err)
 

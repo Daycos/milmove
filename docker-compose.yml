@@ -71,10 +71,10 @@ services:
       - HERE_MAPS_APP_ID
       - HERE_MAPS_GEOCODE_ENDPOINT
       - HERE_MAPS_ROUTING_ENDPOINT
-      - HTTP_ADMIN_SERVER_NAME=adminlocal
-      - HTTP_MY_SERVER_NAME=milmovelocal
-      - HTTP_OFFICE_SERVER_NAME=officelocal
-      - HTTP_ORDERS_SERVER_NAME=orderslocal
+      - HTTP_ADMIN_SERVER_NAME=admin-milmove.daycos.com
+      - HTTP_MY_SERVER_NAME=milmove.daycos.com
+      - HTTP_OFFICE_SERVER_NAME=office-milmove.daycos.com
+      - HTTP_ORDERS_SERVER_NAME=orders-milmove.daycos.com
       - IWS_RBS_ENABLED=1
       - IWS_RBS_HOST
       - LOCAL_STORAGE_ROOT=/tmp

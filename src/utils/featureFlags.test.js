@@ -19,8 +19,8 @@ describe('feature flags', () => {
     expect(detectEnvironment('production', 'office.demo.dp3.us')).toEqual('demo');
 
     expect(detectEnvironment('production', 'localhost')).toEqual('development');
-    expect(detectEnvironment('production', 'milmovelocal')).toEqual('development');
-    expect(detectEnvironment('production', 'officelocal')).toEqual('development');
+    expect(detectEnvironment('production', 'milmove.daycos.com')).toEqual('development');
+    expect(detectEnvironment('production', 'office-milmove.daycos.com')).toEqual('development');
     expect(detectEnvironment('production', '')).toEqual('development');
   });
 

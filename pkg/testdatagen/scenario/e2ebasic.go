@@ -4204,7 +4204,7 @@ func (e e2eBasicScenario) Run(appCtx appcontext.AppContext, userUploader *upload
 	// Create one webhook subscription for PaymentRequestUpdate
 	testdatagen.MakeWebhookSubscription(appCtx.DB(), testdatagen.Assertions{
 		WebhookSubscription: models.WebhookSubscription{
-			CallbackURL: "https://primelocal:9443/support/v1/webhook-notify",
+			CallbackURL: "https://prime-milmove.daycos.com:9443/support/v1/webhook-notify",
 		},
 	})
 

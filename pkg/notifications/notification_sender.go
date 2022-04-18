@@ -86,7 +86,7 @@ func InitEmail(v *viper.Viper, sess *awssession.Session, logger *zap.Logger) (No
 		return NewNotificationSender(sesService, awsSESDomain, sysAdminEmail), nil
 	}
 
-	domain := "milmovelocal"
+	domain := "milmove.daycos.com"
 	logger.Info("Using local email backend", zap.String("domain", domain))
 	return NewStubNotificationSender(domain), nil
 }

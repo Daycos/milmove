@@ -14,9 +14,9 @@ function check_host () {
   fi
 }
 
-check_host milmovelocal
-check_host officelocal
-check_host orderslocal
-check_host adminlocal
-check_host engadminlocal
-check_host primelocal
+check_host milmove.daycos.com
+check_host office-milmove.daycos.com
+check_host orders-milmove.daycos.com
+check_host admin-milmove.daycos.com
+check_host engadmin-milmove.daycos.com
+check_host prime-milmove.daycos.com

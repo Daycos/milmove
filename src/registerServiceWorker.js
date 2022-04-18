@@ -14,8 +14,8 @@ const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
-    // milmovelocal is the default server name.
-    window.location.hostname === 'milmovelocal' ||
+    // milmove.daycos.com is the default server name.
+    window.location.hostname === 'milmove.daycos.com' ||
     // RA Summary: eslint - security/detect-unsafe-regex - Denial of Service: Regular Expression
     // RA: Locates potentially unsafe regular expressions, which may take a very long time to run, blocking the event loop
     // RA: Per MilMove SSP, predisposing conditions are regex patterns from untrusted sources or unbounded matching.
@@ -98,7 +98,7 @@ export default function register() {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
       if (isLocalhost) {
-        // This is running on milmovelocal. Lets check if a service worker still exists or not.
+        // This is running on milmove.daycos.com. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl);
       } else {
         // Is not local host. Just register service worker

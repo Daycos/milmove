@@ -41,7 +41,7 @@ repos:
             config/tls/devlocal-mtls.key$|
             pkg/server/testdata/localhost.key$|
             pkg/server/testdata/localhost-invalid.key$|
-            pkg/server/testdata/officelocal.key$|
+            pkg/server/testdata/office-milmove.daycos.com.key$|
             pkg/auth/authentication/auth_test.go$|
             .envrc.local.template|
             pkg/cli/auth.go$|

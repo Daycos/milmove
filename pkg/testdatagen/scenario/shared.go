@@ -7150,7 +7150,7 @@ func createWebhookSubscriptionForPaymentRequestUpdate(appCtx appcontext.AppConte
 	// Create one webhook subscription for PaymentRequestUpdate
 	testdatagen.MakeWebhookSubscription(db, testdatagen.Assertions{
 		WebhookSubscription: models.WebhookSubscription{
-			CallbackURL: "https://primelocal:9443/support/v1/webhook-notify",
+			CallbackURL: "https://prime-milmove.daycos.com:9443/support/v1/webhook-notify",
 		},
 	})
 }

@@ -12,7 +12,7 @@ proofs=(./tmp/uploads/proof_of_service.pdf)
 function usage() {
   echo "Usage: pricing-acceptance <movecode> [ <hostname> [ <proofs> ... ] ]"
   echo "  movecode   Either moveCode or orderID or orderID can be provided"
-  echo "  hostname   Target host of api calls, defaults to 'local' which is primelocal:9443"
+  echo "  hostname   Target host of api calls, defaults to 'local' which is prime-milmove.daycos.com:9443"
   echo "  proofs     Paths to proof of service docs. Defaults to (${proofs[0]})"
   echo "             You can specify as many proofs as you want"
   echo

@@ -177,7 +177,7 @@ build/downloads: public/downloads
 
 .PHONY: client_run
 client_run: .client_deps.stamp ## Run MilMove Service Member client
-	HOST=milmovelocal yarn start
+	PORT=443 HTTPS=true SSL_CRT_FILE=/etc/ssl/certs/mydaycos/star_daycos.crt SSL_KEY_FILE=/etc/ssl/certs/mydaycos/star_daycos.key yarn start
 
 .PHONY: client_test
 client_test: .client_deps.stamp ## Run client unit tests
@@ -189,11 +189,11 @@ client_test_coverage : .client_deps.stamp ## Run client unit test coverage
 
 .PHONY: office_client_run
 office_client_run: .client_deps.stamp ## Run MilMove Office client
-	HOST=officelocal yarn start
+	PORT=3001 yarn start
 
 .PHONY: admin_client_run
 admin_client_run: .client_deps.stamp ## Run MilMove Admin client
-	HOST=adminlocal yarn start
+	PORT=3002 yarn start
 
 #
 # ----- END CLIENT TARGETS -----
@@ -345,7 +345,6 @@ server_run:
 # Note: Gin is not being used as a proxy so assigning odd port and laddr to keep in IPv4 space.
 # Note: The INTERFACE envar is set to configure the gin build, milmove_gin, local IP4 space with default port GIN_PORT.
 server_run_default: .check_hosts.stamp .check_go_version.stamp .check_gopath.stamp .check_node_version.stamp check_log_dir bin/gin build/index.html server_generate db_dev_run db_dev_migrate redis_run
-	INTERFACE=localhost \
 		./bin/gin \
 		--build ./cmd/milmove \
 		--bin /bin/milmove_gin \
@@ -975,11 +974,11 @@ webhook_client_start:
 	# For more information about this, please see the following page:
 	# https://docs.docker.com/docker-for-mac/networking/#known-limitations-use-cases-and-workarounds
 	docker run \
-		--add-host "adminlocal:172.17.0.1" \
-		--add-host "milmovelocal:172.17.0.1" \
-		--add-host "officelocal:172.17.0.1" \
-		--add-host "orderslocal:172.17.0.1" \
-		--add-host "primelocal:172.17.0.1" \
+		--add-host "admin-milmove.daycos.com:172.17.0.1" \
+		--add-host "milmove.daycos.com:172.17.0.1" \
+		--add-host "office-milmove.daycos.com:172.17.0.1" \
+		--add-host "orders-milmove.daycos.com:172.17.0.1" \
+		--add-host "prime-milmove.daycos.com:172.17.0.1" \
 		-e DB_HOST=172.17.0.1 \
 		-e DB_NAME \
 		-e DB_PORT \

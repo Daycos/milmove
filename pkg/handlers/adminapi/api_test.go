@@ -44,7 +44,7 @@ func (hs *HandlerSuite) setupAuthenticatedRequest(method string, url string) *ht
 // TestHandlerSuite creates our test suite
 func TestHandlerSuite(t *testing.T) {
 	hs := &HandlerSuite{
-		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("adminlocal"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
+		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("admin-milmove.daycos.com"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
 	}
 
 	suite.Run(t, hs)

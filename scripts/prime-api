@@ -13,7 +13,7 @@
 
 set -eu -o pipefail
 
-HOSTNAME=primelocal
+HOSTNAME=prime-milmove.daycos.com
 
 readonly endpoint=$1
 readonly METHOD=${2:-GET}

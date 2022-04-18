@@ -19,7 +19,7 @@ func (suite *NotificationSuite) TestMoveApproved() {
 		UserID:          approver.ID,
 		ApplicationName: auth.OfficeApp,
 	}
-	notification := NewMoveApproved("milmovelocal", move.ID)
+	notification := NewMoveApproved("milmove.daycos.com", move.ID)
 	subject := fmt.Sprintf("[MilMove] Your Move is approved (move: %s)", move.Locator)
 
 	emails, err := notification.emails(suite.AppContextWithSessionForTest(session))
@@ -36,13 +36,13 @@ func (suite *NotificationSuite) TestMoveApproved() {
 }
 
 func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRender() {
-	notification := NewMoveApproved("milmovelocal", uuid.Must(uuid.NewV4()))
+	notification := NewMoveApproved("milmove.daycos.com", uuid.Must(uuid.NewV4()))
 
 	originDutyLocation := "origDutyLocation"
 	originDutyLocationPhoneLine := "555-555-5555"
 
 	s := moveApprovedEmailData{
-		Link:                        "https://milmovelocal/downloads/ppm_info_sheet.pdf",
+		Link:                        "https://milmove.daycos.com/downloads/ppm_info_sheet.pdf",
 		OriginDutyLocation:          &originDutyLocation,
 		DestinationDutyLocation:     "destDutyLocation",
 		OriginDutyLocationPhoneLine: &originDutyLocationPhoneLine,
@@ -56,7 +56,7 @@ func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRender() {
   >.
 </p>
 
-<p>Please <a href="https://milmovelocal/downloads/ppm_info_sheet.pdf">review the Personally Procured Move (PPM) info sheet</a> for detailed instructions.</p>
+<p>Please <a href="https://milmove.daycos.com/downloads/ppm_info_sheet.pdf">review the Personally Procured Move (PPM) info sheet</a> for detailed instructions.</p>
 <br />
 <p>
   <strong>Next steps</strong> <br />Because you’ve chosen a do-it-yourself move, you can start whenever you are ready.
@@ -80,10 +80,10 @@ func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRender() {
 }
 
 func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRenderNoOriginDutyLocation() {
-	notification := NewMoveApproved("milmovelocal", uuid.Must(uuid.NewV4()))
+	notification := NewMoveApproved("milmove.daycos.com", uuid.Must(uuid.NewV4()))
 
 	s := moveApprovedEmailData{
-		Link:                        "https://milmovelocal/downloads/ppm_info_sheet.pdf",
+		Link:                        "https://milmove.daycos.com/downloads/ppm_info_sheet.pdf",
 		OriginDutyLocation:          nil,
 		DestinationDutyLocation:     "destDutyLocation",
 		OriginDutyLocationPhoneLine: nil,
@@ -97,7 +97,7 @@ func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRenderNoOriginDutyLo
   >.
 </p>
 
-<p>Please <a href="https://milmovelocal/downloads/ppm_info_sheet.pdf">review the Personally Procured Move (PPM) info sheet</a> for detailed instructions.</p>
+<p>Please <a href="https://milmove.daycos.com/downloads/ppm_info_sheet.pdf">review the Personally Procured Move (PPM) info sheet</a> for detailed instructions.</p>
 <br />
 <p>
   <strong>Next steps</strong> <br />Because you’ve chosen a do-it-yourself move, you can start whenever you are ready.
@@ -121,13 +121,13 @@ func (suite *NotificationSuite) TestMoveApprovedHTMLTemplateRenderNoOriginDutyLo
 }
 
 func (suite *NotificationSuite) TestMoveApprovedTextTemplateRender() {
-	notification := NewMoveApproved("milmovelocal", uuid.Must(uuid.NewV4()))
+	notification := NewMoveApproved("milmove.daycos.com", uuid.Must(uuid.NewV4()))
 
 	originDutyLocation := "origDutyLocation"
 	originDutyLocationPhoneLine := "555-555-5555"
 
 	s := moveApprovedEmailData{
-		Link:                        "https://milmovelocal/downloads/ppm_info_sheet.pdf",
+		Link:                        "https://milmove.daycos.com/downloads/ppm_info_sheet.pdf",
 		OriginDutyLocation:          &originDutyLocation,
 		DestinationDutyLocation:     "destDutyLocation",
 		OriginDutyLocationPhoneLine: &originDutyLocationPhoneLine,
@@ -137,7 +137,7 @@ func (suite *NotificationSuite) TestMoveApprovedTextTemplateRender() {
 
 The local transportation office approved your move from origDutyLocation to destDutyLocation.
 
-Please review the Personally Procured Move (PPM) info sheet for detailed instructions at https://milmovelocal/downloads/ppm_info_sheet.pdf.
+Please review the Personally Procured Move (PPM) info sheet for detailed instructions at https://milmove.daycos.com/downloads/ppm_info_sheet.pdf.
 
 
 Next steps
