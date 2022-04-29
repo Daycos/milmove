@@ -65,6 +65,7 @@ func (s *gexSenderHTTP) SendToGex(channel services.GEXChannel, body string, file
 		return resp, fmt.Errorf("Creating GEX POST request: %w", err)
 	}
 
+	request.Header.Add("Content-Type","text/plain")
 	q := request.URL.Query()
 	q.Add("fname", filename)
 	q.Add("channel", string(channel))

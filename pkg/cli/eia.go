@@ -28,8 +28,8 @@ func CheckEIA(v *viper.Viper) error {
 	}
 
 	eiaKey := v.GetString(EIAKeyFlag)
-	if len(eiaKey) != 32 {
-		return fmt.Errorf("expected EIA Open Data API key to be 32 characters long; key is %d chars", len(eiaKey))
+	if len(eiaKey) != 40 {
+		return fmt.Errorf("expected EIA Open Data API key to be 40 characters long; key is %d chars", len(eiaKey))
 	}
 	return nil
 }
