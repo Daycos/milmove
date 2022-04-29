@@ -62,9 +62,9 @@ func checkProcessEDIsConfig(v *viper.Viper, logger *zap.Logger) error {
 		return err
 	}
 
-	if err := cli.CheckEntrustCert(v); err != nil {
-		return err
-	}
+	// if err := cli.CheckEntrustCert(v); err != nil {
+	// 	return err
+	// }
 
 	return nil
 }
@@ -194,15 +194,16 @@ func processEDIs(cmd *cobra.Command, args []string) error {
 	}
 
 	// TODO I don't know why we need a separate logger for cert stuff
-	certLogger, _, err := logging.Config(logging.WithEnvironment(dbEnv), logging.WithLoggingLevel(v.GetString(cli.LoggingLevelFlag)))
-	if err != nil {
-		logger.Fatal("Failed to initialize Zap logging", zap.Error(err))
-	}
-	certificates, rootCAs, err := certs.InitDoDEntrustCertificates(v, certLogger)
-	if certificates == nil || rootCAs == nil || err != nil {
-		logger.Fatal("Error in getting tls certs", zap.Error(err))
-	}
-	tlsConfig := &tls.Config{Certificates: certificates, RootCAs: rootCAs, MinVersion: tls.VersionTLS12}
+	// certLogger, _, err := logging.Config(logging.WithEnvironment(dbEnv), logging.WithLoggingLevel(v.GetString(cli.LoggingLevelFlag)))
+	// if err != nil {
+	// 	logger.Fatal("Failed to initialize Zap logging", zap.Error(err))
+	// }
+	// certificates, rootCAs, err := certs.InitDoDEntrustCertificates(v, certLogger)
+	// if certificates == nil || rootCAs == nil || err != nil {
+	// 	logger.Fatal("Error in getting tls certs", zap.Error(err))
+	// }
+	// tlsConfig := &tls.Config{Certificates: certificates, RootCAs: rootCAs, MinVersion: tls.VersionTLS12}
+	tlsConfig := &tls.Config{MinVersion: tls.VersionTLS12}
 
 	gexSender := invoice.NewGexSenderHTTP(
 		gexURL,

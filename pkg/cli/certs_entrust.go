@@ -28,15 +28,15 @@ func CheckEntrustCert(v *viper.Viper) error {
 		return errors.Errorf("No devlocal CA path defined")
 	}
 
-	entrustG2CertString := v.GetString(EntrustG2CertFlag)
-	if len(entrustG2CertString) == 0 {
-		return errors.Errorf("%s is missing", EntrustG2CertFlag)
-	}
+	// entrustG2CertString := v.GetString(EntrustG2CertFlag)
+	// if len(entrustG2CertString) == 0 {
+	// 	return errors.Errorf("%s is missing", EntrustG2CertFlag)
+	// }
 
-	entrustL1KCertString := v.GetString(EntrustL1KCertFlag)
-	if len(entrustL1KCertString) == 0 {
-		return errors.Errorf("%s is missing", EntrustL1KCertFlag)
-	}
+	// entrustL1KCertString := v.GetString(EntrustL1KCertFlag)
+	// if len(entrustL1KCertString) == 0 {
+	// 	return errors.Errorf("%s is missing", EntrustL1KCertFlag)
+	// }
 
 	return nil
 }
