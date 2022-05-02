@@ -17,7 +17,7 @@ services:
     networks:
       default:
         aliases:
-          - primelocal
+          - prime-milmove.daycos.com
     image: ${MILMOVE_MTLS_IMAGE:-milmove_mtls:local}
     entrypoint:
       - "/bin/sh"

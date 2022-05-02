@@ -16,7 +16,7 @@ function prime_api_client () {
     --certpath config/tls/devlocal-mtls.cer \
     --keypath config/tls/devlocal-mtls.key \
     --insecure \
-    --hostname primelocal \
+    --hostname prime-milmove.daycos.com \
     --port 9443 \
     "$@"
 }
