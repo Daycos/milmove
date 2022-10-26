@@ -23,7 +23,7 @@ func (suite *NotificationSuite) TestUserAccountModified() {
 		responsibleUser := factory.BuildUser(nil, nil, nil)
 		session := auth.Session{
 			UserID:   responsibleUser.ID,
-			Hostname: "adminlocal",
+			Hostname: "admin-milmove.daycos.com",
 		}
 
 		// Set up test cases for each action:

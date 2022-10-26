@@ -56,7 +56,7 @@ func (suite *AuthSuite) AuthContext() Context {
 
 func TestAuthSuite(t *testing.T) {
 	hs := &AuthSuite{
-		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("milmovelocal"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
+		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("milmove.daycos.com"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
 	}
 	suite.Run(t, hs)
 	hs.PopTestSuite.TearDown()
