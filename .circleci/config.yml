@@ -642,10 +642,10 @@ commands:
           name: setup hosts
           command: |
             # futz with /etc/hosts for running in circleci
-            echo "127.0.0.1 milmovelocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 officelocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 adminlocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 primelocal" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 office-milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 admin-milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 prime-milmove.daycos.com" | sudo tee -a /etc/hosts
       - run:
           background: true
           name: run server
@@ -675,11 +675,11 @@ commands:
             export SERVE_PRIME_SIMULATOR=true
             export DEVLOCAL_CA=$PWD/config/tls/devlocal-ca.pem
             export DOD_CA_PACKAGE=$PWD/config/tls/Certificates_PKCS7_v5.9_DoD.der.p7b
-            export HTTP_ADMIN_SERVER_NAME=adminlocal
-            export HTTP_MY_SERVER_NAME=milmovelocal
-            export HTTP_OFFICE_SERVER_NAME=officelocal
-            export HTTP_ORDERS_SERVER_NAME=orderslocal
-            export HTTP_PRIME_SERVER_NAME=primelocal
+            export HTTP_ADMIN_SERVER_NAME=admin-milmove.daycos.com
+            export HTTP_MY_SERVER_NAME=milmove.daycos.com
+            export HTTP_OFFICE_SERVER_NAME=office-milmove.daycos.com
+            export HTTP_ORDERS_SERVER_NAME=orders-milmove.daycos.com
+            export HTTP_PRIME_SERVER_NAME=prime-milmove.daycos.com
             export ENVIRONMENT=test
             # disable for speed, playwright tests can fail otherwise
             export DB_DEBUG=false
@@ -700,9 +700,9 @@ commands:
       - run:
           name: run e2e_test playwright
           environment:
-            PLAYWRIGHT_MY_URL: http://milmovelocal:4000
-            PLAYWRIGHT_ADMIN_URL: http://adminlocal:4000
-            PLAYWRIGHT_OFFICE_URL: http://officelocal:4000
+            PLAYWRIGHT_MY_URL: http://milmove.daycos.com:4000
+            PLAYWRIGHT_ADMIN_URL: http://admin-milmove.daycos.com:4000
+            PLAYWRIGHT_OFFICE_URL: http://office-milmove.daycos.com:4000
           # partially taken from https://playwright.dev/docs/ci#sharding-in-circleci
           command: |
             SHARD=$((${CIRCLE_NODE_INDEX}+1))
@@ -736,10 +736,10 @@ commands:
           name: setup hosts
           command: |
             # futz with /etc/hosts for running in circleci
-            echo "127.0.0.1 milmovelocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 officelocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 adminlocal" | sudo tee -a /etc/hosts
-            echo "127.0.0.1 primelocal" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 office-milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 admin-milmove.daycos.com" | sudo tee -a /etc/hosts
+            echo "127.0.0.1 prime-milmove.daycos.com" | sudo tee -a /etc/hosts
       - run:
           background: true
           name: run server
@@ -769,11 +769,11 @@ commands:
             export SERVE_PRIME_SIMULATOR=true
             export DEVLOCAL_CA=$PWD/config/tls/devlocal-ca.pem
             export DOD_CA_PACKAGE=$PWD/config/tls/Certificates_PKCS7_v5.9_DoD.der.p7b
-            export HTTP_ADMIN_SERVER_NAME=adminlocal
-            export HTTP_MY_SERVER_NAME=milmovelocal
-            export HTTP_OFFICE_SERVER_NAME=officelocal
-            export HTTP_ORDERS_SERVER_NAME=orderslocal
-            export HTTP_PRIME_SERVER_NAME=primelocal
+            export HTTP_ADMIN_SERVER_NAME=admin-milmove.daycos.com
+            export HTTP_MY_SERVER_NAME=milmove.daycos.com
+            export HTTP_OFFICE_SERVER_NAME=office-milmove.daycos.com
+            export HTTP_ORDERS_SERVER_NAME=orders-milmove.daycos.com
+            export HTTP_PRIME_SERVER_NAME=prime-milmove.daycos.com
             export ENVIRONMENT=test
             export MUTUAL_TLS_ENABLED=1
             export MUTUAL_TLS_PORT=9443
@@ -786,7 +786,7 @@ commands:
       - run:
           name: wait for server
           command: |
-            dockerize -wait http://milmovelocal:4000 -timeout 5m
+            dockerize -wait http://milmove.daycos.com:4000 -timeout 5m
       - run:
           name: run e2e mtls tests
           command: |

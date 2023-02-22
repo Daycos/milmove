@@ -20,7 +20,7 @@ type TestHarnessAPISuite struct {
 
 func TestTestHarnessAPISuite(t *testing.T) {
 	hs := &TestHarnessAPISuite{
-		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("milmovelocal"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
+		BaseHandlerTestSuite: handlers.NewBaseHandlerTestSuite(notifications.NewStubNotificationSender("milmove.daycos.com"), testingsuite.CurrentPackage(), testingsuite.WithPerTestTransaction()),
 	}
 	suite.Run(t, hs)
 	hs.PopTestSuite.TearDown()
